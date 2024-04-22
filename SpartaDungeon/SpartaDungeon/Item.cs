@@ -8,9 +8,10 @@ public class Item
     public int AttackPower;
     public int Defense;
     public int HP;
-
     public int Gold;
-    public Item(string name, string description, int attackPower, int defense, int hp, int gold)
+
+    public bool IsPurchased;
+    public Item(string name, string description, int attackPower, int defense, int hp, int gold, bool isPurchased)
 	{
 		Name = name;
         Description = description;
@@ -18,5 +19,6 @@ public class Item
         Defense = defense;
         HP = hp;
         Gold = gold;
+        IsPurchased = isPurchased;
 	}
 }
