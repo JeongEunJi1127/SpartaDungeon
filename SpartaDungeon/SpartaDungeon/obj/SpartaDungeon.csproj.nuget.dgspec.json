@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JeongEunJi\\Desktop\\TeamSparta\\C#Studying\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj": {}
+    "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JeongEunJi\\Desktop\\TeamSparta\\C#Studying\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj": {
+    "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JeongEunJi\\Desktop\\TeamSparta\\C#Studying\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj",
+        "projectUniqueName": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj",
         "projectName": "SpartaDungeon",
-        "projectPath": "C:\\Users\\JeongEunJi\\Desktop\\TeamSparta\\C#Studying\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj",
+        "projectPath": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon.csproj",
         "packagesPath": "C:\\Users\\JeongEunJi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JeongEunJi\\Desktop\\TeamSparta\\C#Studying\\SpartaDungeon\\SpartaDungeon\\obj\\",
+        "outputPath": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JeongEunJi\\AppData\\Roaming\\NuGet\\NuGet.Config",
