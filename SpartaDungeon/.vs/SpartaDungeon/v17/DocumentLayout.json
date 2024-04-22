@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|c:\\unityprojects\\spartadungeon\\spartadungeon\\spartadungeon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|solutionrelative:spartadungeon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|c:\\unityprojects\\spartadungeon\\spartadungeon\\spartadungeon\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|solutionrelative:spartadungeon\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|c:\\unityprojects\\spartadungeon\\spartadungeon\\spartadungeon\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|solutionrelative:spartadungeon\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|c:\\unityprojects\\spartadungeon\\spartadungeon\\spartadungeon\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|solutionrelative:spartadungeon\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|c:\\unityprojects\\spartadungeon\\spartadungeon\\spartadungeon\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5264C6F8-7953-4540-8B05-2D7DAE69F507}|SpartaDungeon\\SpartaDungeon.csproj|solutionrelative:spartadungeon\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,12 +27,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\Program.cs",
-              "RelativeDocumentMoniker": "SpartaDungeon\\Program.cs",
-              "ToolTip": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\Program.cs",
-              "RelativeToolTip": "SpartaDungeon\\Program.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAuwI4AAAASAAAA",
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\GameManager.cs",
+              "RelativeDocumentMoniker": "SpartaDungeon\\GameManager.cs",
+              "ToolTip": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\GameManager.cs",
+              "RelativeToolTip": "SpartaDungeon\\GameManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T04:05:51.465Z",
               "IsPinned": true,
@@ -41,6 +41,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\User.cs",
+              "RelativeDocumentMoniker": "SpartaDungeon\\User.cs",
+              "ToolTip": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\User.cs",
+              "RelativeToolTip": "SpartaDungeon\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T06:01:39.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Item.cs",
               "DocumentMoniker": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\Item.cs",
               "RelativeDocumentMoniker": "SpartaDungeon\\Item.cs",
@@ -49,20 +62,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T05:35:34.541Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\User.cs",
-              "RelativeDocumentMoniker": "SpartaDungeon\\User.cs",
-              "ToolTip": "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\User.cs",
-              "RelativeToolTip": "SpartaDungeon\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T06:01:39.919Z",
               "EditorCaption": ""
             }
           ]
