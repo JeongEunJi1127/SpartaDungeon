@@ -1,0 +1,14 @@
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Dungeon.exe
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Dungeon.deps.json
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Dungeon.runtimeconfig.json
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Dungeon.dll
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Dungeon.pdb
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.AssemblyInfoInputs.cache
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.AssemblyInfo.cs
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.csproj.CoreCompileInputs.cache
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.dll
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\refint\Dungeon.dll
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.pdb
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\Dungeon.genruntimeconfig.cache
+C:\Users\JeongEunJi\Desktop\TeamSparta\C#Studying\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\ref\Dungeon.dll
