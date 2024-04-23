@@ -11,7 +11,8 @@ public class Item
     public int Gold { get; private set; }
 
     public bool IsPurchased { get;  set; }
-    public Item(string name, string description, int attackPower, int defense, int hp, int gold, bool isPurchased)
+    public bool IsEquipped { get; set; }
+    public Item(string name, string description, int attackPower, int defense, int hp, int gold, bool isPurchased, bool isEquipped)
 	{
 		Name = name;
         Description = description;
@@ -20,5 +21,6 @@ public class Item
         HP = hp;
         Gold = gold;
         IsPurchased = isPurchased;
-	}
+        IsEquipped = isEquipped;
+    }
 }
