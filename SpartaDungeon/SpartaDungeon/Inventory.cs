@@ -12,7 +12,7 @@
             Console.WriteLine("인벤토리\n");
             Console.WriteLine("[아이템 목록]\n");
 
-            ShowInventoryItem();
+            ShowInventoryItem(false);
 
             Console.WriteLine("\n1. 장착 관리");
             Console.WriteLine("0. 나가기\n");
@@ -49,7 +49,13 @@
         {
             return InventoryItems;
         }
-        public static void ShowInventoryItem()
+
+        public static void RemoveInventoryItem(Item item)
+        {
+            InventoryItems.Remove(item);
+        }
+
+        public static void ShowInventoryItem(bool showGold)
         {
             // 인벤토리에 아이템이 없으면
             if (InventoryItems.Count == 0) { Console.WriteLine("인벤토리에 아이템이 없습니다. \n"); }
@@ -70,7 +76,13 @@
                 Console.Write(InventoryItems[i].Name + "  |   ");
                 // 아이템 속성 
                 foreach (string property in itemProperty) { Console.Write(property + "  |   "); }
-                Console.WriteLine(InventoryItems[i].Description);
+
+                // store 스크립트에서 아이템 판매 시 보여주는 화면일 때 골드도 보여주기
+                if (showGold)
+                {
+                    Console.WriteLine(InventoryItems[i].Description +" | " + InventoryItems[i].Gold + "G");
+                }
+                else { Console.WriteLine(InventoryItems[i].Description); }
             }
         }
 
@@ -80,7 +92,7 @@
             Console.WriteLine("인벤토리 - 장착관리\n");
             Console.WriteLine("[아이템 목록]\n");
 
-            ShowInventoryItem();
+            ShowInventoryItem(false);
             Console.WriteLine("\n0. 나가기\n");
 
             while (true)

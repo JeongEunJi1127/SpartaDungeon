@@ -13,6 +13,7 @@ namespace SpartaDungeon
             // 현재 상점 물품 보여주기
             ShowStoreProduct(false);
             Console.WriteLine("1. 아이템 구매");
+            Console.WriteLine("2. 아이템 판매");
             Console.WriteLine("0. 나가기\n");
 
             while (true)
@@ -31,6 +32,11 @@ namespace SpartaDungeon
                 { 
                     BuyProduct(); 
                     break; 
+                }
+                else if (input == 2)
+                {
+                    SellProduct();
+                    break;
                 }
                 else 
                 { 
@@ -128,6 +134,59 @@ namespace SpartaDungeon
                 else 
                 { 
                     Console.WriteLine("잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~" + GameManager.items.Length + " 입니다"); 
+                }
+            }
+        }
+        
+        // 아이템 판매
+        public static void SellProduct()
+        {
+            // 플레이어가 현재 가지고 있는 아이템 배열 가져오기
+            List<Item> items = Inventory.GetInventory();
+
+            Console.WriteLine("\n--------------------------------------------------------------\n");
+            Console.WriteLine("상점 - 아이템 판매\n");
+            Console.WriteLine("[보유 골드]\n" + GameManager.user.Gold + " G\n");
+            Console.WriteLine("[아이템 목록]\n");
+
+            Inventory.ShowInventoryItem(true);
+
+            Console.WriteLine("\n0. 나가기\n");
+            Console.WriteLine("\n원하시는 행동을 입력해주세요.");
+
+            while (true)
+            {
+                int input = int.Parse(Console.ReadLine());
+
+                // 나가기
+                if (input == 0)
+                {
+                    ShowStore();
+                    break;
+                }
+                // 현재 인벤토리에 있는 물품의 숫자를 고른다면
+                else if (input <= items.Count)
+                {
+                    Console.Write(items[input - 1].Name + "을 " + ((int)(items[input - 1].Gold * 0.85)).ToString()+ "G에 판매합니다.");
+                    GameManager.user.Gold += (int)(items[input - 1].Gold * 0.85);
+                    // 판매 후 판매한 아이템 다시 구매할 수 있도록 상점 업데이트
+                    foreach(Item i in GameManager.items)
+                    {
+                        if(i.Name == items[input - 1].Name)
+                        {
+                            i.IsPurchased = false;
+                        }
+                    }
+                    // 플레이어 인벤토리에서 아이템 판매
+                    Inventory.RemoveInventoryItem(items[input - 1]);
+                    // 판매시 장착하고 있는 아이템이었다면 해제
+                    Status.UpdateStatus();
+                    // 함수 다시 호출
+                    SellProduct();
+                }
+                else
+                {
+                    Console.WriteLine("잘못된 입력입니다.");
                 }
             }
         }
