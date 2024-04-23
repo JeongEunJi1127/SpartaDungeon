@@ -47,9 +47,9 @@ namespace SpartaDungeon
             {
                 // 아이템의 속성 값이 0 이 아닌 것 모두 뽑기
                 List<string> itemProperty = new List<string>();
-                if (GameManager.items[i].AttackPower != 0) { itemProperty.Add(("공격력 +" + GameManager.items[i].AttackPower)); }
-                else if (GameManager.items[i].Defense != 0) { itemProperty.Add(("방어력 +" + GameManager.items[i].Defense)); }
-                else if (GameManager.items[i].HP != 0) { itemProperty.Add(("체력 +" + GameManager.items[i].HP)); }
+                if (GameManager.items[i].AttackPower != 0) { itemProperty.Add(("공격력 +" + GameManager.items[i].AttackPower) + " "); }
+                if (GameManager.items[i].Defense != 0) { itemProperty.Add(("방어력 +" + GameManager.items[i].Defense) + " "); }
+                if (GameManager.items[i].HP != 0) { itemProperty.Add(("체력 +" + GameManager.items[i].HP) + " "); }
 
                 // 아이템이 구매 완료 되었는지 확인
                 string purchased;
