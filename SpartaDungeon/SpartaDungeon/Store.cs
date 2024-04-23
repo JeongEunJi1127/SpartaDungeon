@@ -81,6 +81,7 @@ namespace SpartaDungeon
             ShowStoreProduct(true);
             Console.WriteLine("0. 나가기\n");
 
+
             while (true)
             {
                 Console.WriteLine("원하시는 행동을 입력해주세요.");
@@ -92,9 +93,41 @@ namespace SpartaDungeon
                     ShowStore(); 
                     break; 
                 }
+                // 현재 상점에 있는 물품의 숫자를 고른다면
+                else if (input <= GameManager.items.Length)
+                {
+                    // 이미 구매한 아이템이라면
+                    if (GameManager.items[input-1].IsPurchased) 
+                    { 
+                        Console.WriteLine("이미 구매한 아이템입니다."); 
+                    }
+                    // 구매가 가능하다면
+                    else
+                    {
+                        //보유 금액이 충분하다면
+                        if (GameManager.user.Gold >= GameManager.items[input-1].Gold)
+                        {
+                            Console.WriteLine("구매를 완료했습니다.");
+                            // 재화 감소
+                            GameManager.user.Gold -= GameManager.items[input - 1].Gold;
+                            // 인벤토리에 아이템 추가 
+                            Inventory.AddItemInInventory(GameManager.items[input-1]);
+                            // 상점에 구매완료 표시
+                            GameManager.items[input-1].IsPurchased = true;
+
+                            // 아이템 창 띄우기
+                            BuyProduct();
+                        }
+                        // 보유 금액이 부족하다면
+                        else
+                        {
+                            Console.WriteLine("Gold 가 부족합니다.\n");
+                        }
+                    }
+                }
                 else 
                 { 
-                    Console.WriteLine("잘못된 입력입니다."); 
+                    Console.WriteLine("잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~" + GameManager.items.Length + " 입니다"); 
                 }
             }
         }
