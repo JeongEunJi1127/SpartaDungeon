@@ -30,7 +30,7 @@ namespace SpartaDungeon
 
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.");
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -42,7 +42,7 @@ namespace SpartaDungeon
                 }
                 else
                 {
-                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }

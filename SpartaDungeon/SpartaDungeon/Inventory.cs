@@ -19,7 +19,7 @@
 
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.");
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -32,11 +32,12 @@
                 // 장착 관리
                 else if (input == 1)
                 {
+                    Console.Clear();
                     ManageEquipment();
                 }
                 else
                 {
-                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }
@@ -98,7 +99,7 @@
 
             while (true)
             {
-                Console.WriteLine("장착하고 싶거나 장착 해제하고 싶은 장비의 번호를 입력해주세요.");
+                Console.WriteLine("\n장착하고 싶거나 장착 해제하고 싶은 장비의 번호를 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -126,7 +127,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }

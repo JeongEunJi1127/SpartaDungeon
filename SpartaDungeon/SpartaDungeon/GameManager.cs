@@ -34,7 +34,7 @@
            
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.");
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
                 // 상태창 보기
                 if (input == 1)  
@@ -59,8 +59,7 @@
                 }
                 else  
                 {
-                    Console.Clear();
-                    Console.WriteLine("잘못된 입력입니다."); 
+                    Console.WriteLine("\n잘못된 입력입니다.\n"); 
                 }
             }
         }

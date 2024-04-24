@@ -18,7 +18,7 @@ namespace SpartaDungeon
 
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.");
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -30,18 +30,20 @@ namespace SpartaDungeon
                 }
                 // 아이템 구매
                 else if (input == 1) 
-                { 
+                {
+                    Console.Clear();
                     BuyProduct(); 
                     break; 
                 }
                 else if (input == 2)
                 {
+                    Console.Clear();
                     SellProduct();
                     break;
                 }
                 else 
                 { 
-                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }
@@ -91,7 +93,7 @@ namespace SpartaDungeon
 
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.");
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -107,7 +109,7 @@ namespace SpartaDungeon
                     // 이미 구매한 아이템이라면
                     if (GameManager.items[input-1].IsPurchased) 
                     { 
-                        Console.WriteLine("이미 구매한 아이템입니다."); 
+                        Console.WriteLine("\n이미 구매한 아이템입니다.\n"); 
                     }
                     // 구매가 가능하다면
                     else
@@ -115,7 +117,8 @@ namespace SpartaDungeon
                         //보유 금액이 충분하다면
                         if (GameManager.user.Gold >= GameManager.items[input-1].Gold)
                         {
-                            Console.WriteLine("구매를 완료했습니다.");
+                            Console.Clear();
+                            Console.WriteLine("\n구매를 완료했습니다.");
                             // 재화 감소
                             GameManager.user.Gold -= GameManager.items[input - 1].Gold;
                             // 인벤토리에 아이템 추가 
@@ -129,13 +132,13 @@ namespace SpartaDungeon
                         // 보유 금액이 부족하다면
                         else
                         {
-                            Console.WriteLine("Gold 가 부족합니다.\n");
+                            Console.WriteLine("\nGold 가 부족합니다.\n");
                         }
                     }
                 }
                 else 
                 { 
-                    Console.WriteLine("잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~" + GameManager.items.Length + " 입니다"); 
+                    Console.WriteLine("\n 잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~" + GameManager.items.Length + " 입니다 \n "); 
                 }
             }
         }
@@ -170,6 +173,7 @@ namespace SpartaDungeon
                 // 현재 인벤토리에 있는 물품의 숫자를 고른다면
                 else if (input <= items.Count)
                 {
+                    Console.Clear();
                     Console.Write(items[input - 1].Name + "을 " + ((int)(items[input - 1].Gold * 0.85)).ToString()+ "G에 판매합니다.");
                     GameManager.user.Gold += (int)(items[input - 1].Gold * 0.85);
                     // 판매 후 판매한 아이템 다시 구매할 수 있도록 상점 업데이트
@@ -189,7 +193,7 @@ namespace SpartaDungeon
                 }
                 else
                 {
-                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.WriteLine("\n잘못된 입력입니다.\n");
                 }
             }
         }
