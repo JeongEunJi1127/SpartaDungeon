@@ -10,6 +10,11 @@ namespace SpartaDungeon
         // 상태창
         public static void ViewStatus()
         {
+            // 초기화
+            attackPower = "";
+            defense = "";
+            hp = "";
+
             Console.WriteLine("\n--------------------------------------------------------------\n");
             Console.WriteLine("상태 보기\n");
 
