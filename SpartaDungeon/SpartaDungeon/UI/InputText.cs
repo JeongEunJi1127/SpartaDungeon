@@ -31,6 +31,10 @@ namespace SpartaDungeon.UI
                         Console.Clear();
                         Dungeon.ShowDungeon();
                         break;
+                    case 5:
+                        Console.Clear();
+                        Rest.ShowRestPlace();
+                        break;
                     default:
                         Console.WriteLine("\n잘못된 입력입니다.\n");
                         break;
@@ -38,7 +42,7 @@ namespace SpartaDungeon.UI
             }
         }
 
-        // 상태창 입력
+        // 상태창 입력 - 다시 마을로 돌아가기
         public static void StatusInput()
         {
             while (true)
@@ -257,10 +261,61 @@ namespace SpartaDungeon.UI
                         Village.ShowVillage();
                         break;
                     case 1:
+                        Console.Clear();
+                        Dungeon.ExploreDungeon(GameManager.dungeonLevels[0]);
                         break;
                     case 2:
+                        Console.Clear();
+                        Dungeon.ExploreDungeon(GameManager.dungeonLevels[1]);
                         break; 
                     case 3:
+                        Console.Clear();
+                        Dungeon.ExploreDungeon(GameManager.dungeonLevels[2]);
+                        break;
+                    default:
+                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        break;
+                }
+            }
+        }
+
+        // 던전 - 클리어& 실패시 던전입장 화면으로 돌아가는 입력 
+        public static void BackToDungeonInput()
+        {
+            while (true)
+            {
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                int input = int.Parse(Console.ReadLine());
+
+                switch(input)
+                {
+                    case 0:
+                        Console.Clear();
+                        Dungeon.ShowDungeon();
+                        break;
+                    default :
+                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        break;
+                }
+            }
+        }
+
+        // 휴식 입력
+        public static void RestInput()
+        {
+            while (true)
+            {
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                int input = int.Parse(Console.ReadLine());
+
+                switch (input)
+                {
+                    case 0:
+                        Console.Clear();
+                        Village.ShowVillage();
+                        break;
+                    case 1:
+                        Rest.Resting();
                         break;
                     default:
                         Console.WriteLine("\n잘못된 입력입니다.\n");

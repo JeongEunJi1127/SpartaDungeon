@@ -11,7 +11,8 @@ namespace SpartaDungeon.Scene
             Console.WriteLine("1. 상태 보기");
             Console.WriteLine("2. 인벤토리");
             Console.WriteLine("3. 상점");
-            Console.WriteLine("4. 던전입장\n");
+            Console.WriteLine("4. 던전입장");
+            Console.WriteLine("5. 휴식하기\n");
 
             InputText.VillageInput();
         }

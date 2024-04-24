@@ -22,4 +22,9 @@ public class User
         HP = hp;
         Gold = gold;
     }
+
+    public void LevelUp(int level)
+    {
+
+    }
 }
