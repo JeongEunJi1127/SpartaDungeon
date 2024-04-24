@@ -23,7 +23,8 @@ namespace SpartaDungeon
 
                 // 나가기
                 if (input == 0) 
-                { 
+                {
+                    Console.Clear();
                     GameManager.Village(); 
                     break; 
                 }
@@ -95,7 +96,8 @@ namespace SpartaDungeon
 
                 // 나가기
                 if (input == 0) 
-                { 
+                {
+                    Console.Clear();
                     ShowStore(); 
                     break; 
                 }
@@ -161,6 +163,7 @@ namespace SpartaDungeon
                 // 나가기
                 if (input == 0)
                 {
+                    Console.Clear();
                     ShowStore();
                     break;
                 }

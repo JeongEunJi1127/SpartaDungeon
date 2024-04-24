@@ -25,6 +25,7 @@
                 // 나가기
                 if (input == 0)
                 {
+                    Console.Clear();
                     GameManager.Village();
                     break;
                 }
@@ -103,6 +104,7 @@
                 // 나가기
                 if (input == 0)
                 {
+                    Console.Clear();
                     ShowInventory();
                     break;
                 }

@@ -39,23 +39,27 @@
                 // 상태창 보기
                 if (input == 1)  
                 {
+                    Console.Clear();
                     Status.ViewStatus();  
                     break; 
                 }
                 // 인벤토리
                 else if (input == 2) 
-                { 
+                {
+                    Console.Clear();
                     Inventory.ShowInventory();  
                     break;  
                 }
                 // 상점
                 else if (input == 3)
-                { 
+                {
+                    Console.Clear();
                     Store.ShowStore(); 
                     break;  
                 }
                 else  
-                { 
+                {
+                    Console.Clear();
                     Console.WriteLine("잘못된 입력입니다."); 
                 }
             }
