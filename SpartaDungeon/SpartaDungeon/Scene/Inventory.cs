@@ -5,7 +5,7 @@ namespace SpartaDungeon.Scene
 {
     public class Inventory
     {
-        // 사용자의 아이템 리스트 선언 (가변적이어야 하므로 리스트 사용)
+        // 사용자의 아이템 리스트 선언
         private static List<Item> InventoryItems = new List<Item>();
 
         public static bool attackEquip = false;
@@ -36,6 +36,7 @@ namespace SpartaDungeon.Scene
 
             InputText.ManageEquipmentInput();
         }
+
         public static void ShowInventoryItem(bool showGold)
         {
             // 인벤토리에 아이템이 없으면

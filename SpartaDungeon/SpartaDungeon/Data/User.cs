@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpartaDungeon.Scene;
+using System;
 
 public class User
 {
@@ -23,8 +24,13 @@ public class User
         Gold = gold;
     }
 
-    public void LevelUp(int level)
+    public void LevelUp()
     {
-
+        if(Dungeon.clearCount == Level)
+        {
+            Dungeon.clearCount = 0;
+            Level++;
+            Console.WriteLine($"레벨업! \n현재 플레이어 레벨 : {Level}\n");
+        }
     }
 }

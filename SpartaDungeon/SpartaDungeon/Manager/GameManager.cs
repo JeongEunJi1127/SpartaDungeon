@@ -7,6 +7,7 @@ namespace SpartaDungeon.Manager
     {
         // 초기 사용자 정보 초기화
         public static User user = new User("정은지", 1, "전사", 10, 5, 100, 7000);
+
         // 상점 아이템 배열 선언
         public static Item[] items = new Item[]
         {

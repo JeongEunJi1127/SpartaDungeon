@@ -11,9 +11,9 @@ namespace SpartaDungeon.Scene
         {
             Console.WriteLine("던전입장");
             Console.WriteLine("이곳에서 던전으로 들어가기전 활동을 할 수 있습니다.\n");
-            Console.WriteLine($"1. 쉬운 던전     |   방어력 {GameManager.dungeonLevels[0].Defense} 이상 권장");
-            Console.WriteLine($"2. 일반 던전     |   방어력 {GameManager.dungeonLevels[1].Defense} 이상 권장");
-            Console.WriteLine($"3. 어려운 던전   |   방어력 {GameManager.dungeonLevels[2].Defense} 이상 권장");
+            Console.WriteLine($"1. 쉬운 던전     |   방어력 {GameManager.dungeonLevels[0].RecommendedDefense} 이상 권장");
+            Console.WriteLine($"2. 일반 던전     |   방어력 {GameManager.dungeonLevels[1].RecommendedDefense} 이상 권장");
+            Console.WriteLine($"3. 어려운 던전   |   방어력 {GameManager.dungeonLevels[2].RecommendedDefense} 이상 권장");
             Console.WriteLine("0. 나가기\n");
 
             InputText.DungeonInput();
@@ -26,13 +26,13 @@ namespace SpartaDungeon.Scene
             int playerGold = GameManager.user.Gold;
 
             Random random = new Random();
-            int percentage = random.Next(0, 10);
+            int losePercentage = random.Next(0, 10);
             //(권장 방어력 - 내 방어력) 만큼 랜덤 값에 설정
-            int lossHp = random.Next(20+dungeonLevel.RecommendedDefense-playerDefense , 36 + dungeonLevel.RecommendedDefense - playerDefense);
+            int lossHp = random.Next(20 + dungeonLevel.RecommendedDefense - playerDefense, 36 + dungeonLevel.RecommendedDefense - playerDefense);
             int plusGold = random.Next(GameManager.user.AttackPower, GameManager.user.AttackPower*2 + 1);
 
             //권장 방어력보다 낮고 40% 확률에 걸리면 던전 실패 - 보상 없고 체력 감소 절반
-            if (playerDefense < dungeonLevel.RecommendedDefense && percentage <= 3)
+            if (playerDefense < dungeonLevel.RecommendedDefense && losePercentage <= 3)
             {
                 GameManager.user.HP = playerHp / 2;
 
@@ -54,9 +54,10 @@ namespace SpartaDungeon.Scene
         public static void ClearDungeon(int prevHp, int prevGold)
         {
             clearCount++;
+            GameManager.user.LevelUp();
 
             Console.WriteLine("던전 클리어");
-            Console.WriteLine("축하합니다!!\r\n 던전을 클리어 하였습니다.\n");
+            Console.WriteLine("축하합니다!!\r\n던전을 클리어 하였습니다.\n");
             Console.WriteLine("[탐험 결과]");
             Console.WriteLine($"체력 {prevHp} -> {GameManager.user.HP}");
             Console.WriteLine($"Gold {prevGold} -> {GameManager.user.Gold}\n");

@@ -10,7 +10,7 @@ namespace SpartaDungeon.Scene
             Console.WriteLine("상점\n");
             Console.WriteLine($"[보유 골드]\n{GameManager.user.Gold} G\n");
             Console.WriteLine("[아이템 목록]\n");
-            // 현재 상점 물품 보여주기
+            
             ShowStoreProduct(false);
 
             Console.WriteLine("1. 아이템 구매");
@@ -26,8 +26,9 @@ namespace SpartaDungeon.Scene
             Console.WriteLine("상점 - 아이템 구매\n");
             Console.WriteLine("[보유 골드]\n" + GameManager.user.Gold + " G\n");
             Console.WriteLine("[아이템 목록]\n");
-            // 현재 상점 물품 보여주기
+            
             ShowStoreProduct(true);
+
             Console.WriteLine("0. 나가기\n");
 
             InputText.BuyProductInput();
