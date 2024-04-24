@@ -43,7 +43,6 @@ namespace SpartaDungeon.Scene
             Inventory.ShowInventoryItem(true);
 
             Console.WriteLine("\n0. 나가기\n");
-            Console.WriteLine("\n원하시는 행동을 입력해주세요.");
 
             InputText.sellProductInput();
         }
