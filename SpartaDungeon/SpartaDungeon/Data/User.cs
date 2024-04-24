@@ -1,19 +1,20 @@
 ﻿using SpartaDungeon.Scene;
+using SpartaDungeon.UI;
 using System;
 
 public class User
 {
     public int Level { get; private set; }
     public int Gold { get;  set; }
-    public int AttackPower { get; set; }
-    public int Defense { get; set; }
-    public int HP { get; set; }
+    public float AttackPower { get; set; }
+    public float Defense { get; set; }
+    public float HP { get; set; }
 
     public string Name { get; private set; }
     public string Job { get; private set; }
 
 
-    public User(string name, int level, string job, int attackPower, int defense, int hp, int gold)
+    public User(string name, int level, string job, float attackPower, float defense, float hp, int gold)
 	{
         Name = name;    
         Level = level;
@@ -30,7 +31,18 @@ public class User
         {
             Dungeon.clearCount = 0;
             Level++;
-            Console.WriteLine($"레벨업! \n현재 플레이어 레벨 : {Level}\n");
+            SetColorToText.SetColorToSkyBlue($"[레벨업!]");
+            Console.Write("현재 플레이어 레벨 : ");
+            SetColorToText.SetColorToMagenta($"{Level}\n\n");
+
+            AttackPower += 0.5f;
+            Defense ++;
         }
+    }
+
+    public bool Die()
+    {
+        if (HP <= 0) { return true; }
+        return false;
     }
 }

@@ -16,17 +16,26 @@ namespace SpartaDungeon.Scene
             defense = "";
             hp = "";
 
-            Console.WriteLine("상태 보기\n");
-
+            SetColorToText.SetColorToYellow("상태창");
             UpdateStatus();
 
-            Console.WriteLine($"LV. {GameManager.user.Level}");
-            Console.WriteLine($"Chad ( {GameManager.user.Job} )");
-            Console.WriteLine($"공격력 : {GameManager.user.AttackPower} {attackPower}");
-            Console.WriteLine($"방어력 : {GameManager.user.Defense} {defense}");
-            Console.WriteLine($"체 력 : {GameManager.user.HP} {hp}");
-            Console.WriteLine($"Gold : {GameManager.user.Gold} G\n");
-            Console.WriteLine("0. 나가기\n");
+            Console.Write("\nLV ");
+            SetColorToText.SetColorToMagenta(GameManager.user.Level.ToString());
+            Console.Write("\nClass ");
+            SetColorToText.SetColorToMagenta(GameManager.user.Job.ToString());
+            Console.Write("\n공격력 ");
+            SetColorToText.SetColorToMagenta(GameManager.user.AttackPower.ToString());
+            Console.Write("\n방어력 ");
+            SetColorToText.SetColorToMagenta(GameManager.user.Defense.ToString());
+            Console.Write("\n체 력 ");
+            SetColorToText.SetColorToMagenta(GameManager.user.HP.ToString());
+            Console.Write("\nGold ");
+            SetColorToText.SetColorToMagenta(GameManager.user.Gold.ToString());
+            Console.Write(" G");
+
+            Console.WriteLine("\n");
+            SetColorToText.SetColorToMagenta("0");
+            Console.Write(". 나가기\n\n");
 
             InputText.StatusInput();
         }

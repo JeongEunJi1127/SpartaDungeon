@@ -10,7 +10,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -36,7 +36,7 @@ namespace SpartaDungeon.UI
                         Rest.ShowRestPlace();
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -47,7 +47,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -57,7 +57,7 @@ namespace SpartaDungeon.UI
                         Village.ShowVillage();
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -68,7 +68,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -82,7 +82,7 @@ namespace SpartaDungeon.UI
                         Inventory.ManageEquipment();
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -93,7 +93,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("\n장착하고 싶거나 장착 해제하고 싶은 장비의 번호를 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("\n장착하고 싶거나 장착 해제하고 싶은 장비의 번호를 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -114,7 +114,7 @@ namespace SpartaDungeon.UI
                 }
                 else
                 {
-                    Console.WriteLine("\n잘못된 입력입니다.\n");
+                    SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                 }
             }
         }
@@ -123,7 +123,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -141,7 +141,7 @@ namespace SpartaDungeon.UI
                         Store.SellProduct();
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -151,7 +151,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -167,7 +167,7 @@ namespace SpartaDungeon.UI
                     // 이미 구매한 아이템이라면
                     if (GameManager.items[input - 1].IsPurchased)
                     {
-                        Console.WriteLine("\n이미 구매한 아이템입니다.\n");
+                        SetColorToText.SetColorToRed("\n이미 구매한 아이템입니다.\n");
                     }
                     // 구매가 가능하다면
                     else
@@ -176,7 +176,7 @@ namespace SpartaDungeon.UI
                         if (GameManager.user.Gold >= GameManager.items[input - 1].Gold)
                         {
                             Console.Clear();
-                            Console.WriteLine("\n구매를 완료했습니다.");
+                            SetColorToText.SetColorToDarkCyan("\n구매를 완료했습니다.\n");
                             // 재화 감소
                             GameManager.user.Gold -= GameManager.items[input - 1].Gold;
                             // 인벤토리에 아이템 추가 
@@ -190,13 +190,13 @@ namespace SpartaDungeon.UI
                         // 보유 금액이 부족하다면
                         else
                         {
-                            Console.WriteLine("\nGold 가 부족합니다.\n");
+                            SetColorToText.SetColorToRed("\nGold 가 부족합니다.\n");
                         }
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"\n 잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~{GameManager.items.Length} 입니다 \n ");
+                    SetColorToText.SetColorToRed($"\n 잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~{GameManager.items.Length} 입니다 \n ");
                 }
             }
         }
@@ -208,7 +208,7 @@ namespace SpartaDungeon.UI
 
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -222,7 +222,7 @@ namespace SpartaDungeon.UI
                 else if (input <= items.Count)
                 {
                     Console.Clear();
-                    Console.Write($"{items[input - 1].Name} 을 {(int)(items[input - 1].Gold * 0.85)} G에 판매합니다.\n");
+                    SetColorToText.SetColorToDarkCyan($"{items[input - 1].Name} 을 {(int)(items[input - 1].Gold * 0.85)} G에 판매합니다.\n");
                     GameManager.user.Gold += (int)(items[input - 1].Gold * 0.85);
 
                     // 판매 후 판매한 아이템 다시 구매할 수 있도록 상점 업데이트
@@ -241,7 +241,7 @@ namespace SpartaDungeon.UI
                 }
                 else
                 {
-                    Console.WriteLine("\n잘못된 입력입니다.\n");
+                    SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                 }
             }
         }
@@ -251,7 +251,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -273,7 +273,7 @@ namespace SpartaDungeon.UI
                         Dungeon.ExploreDungeon(GameManager.dungeonLevels[2]);
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -284,7 +284,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch(input)
@@ -294,7 +294,7 @@ namespace SpartaDungeon.UI
                         Dungeon.ShowDungeon();
                         break;
                     default :
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }
@@ -305,7 +305,7 @@ namespace SpartaDungeon.UI
         {
             while (true)
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -318,7 +318,7 @@ namespace SpartaDungeon.UI
                         Rest.Resting();
                         break;
                     default:
-                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        SetColorToText.SetColorToRed("\n잘못된 입력입니다.\n");
                         break;
                 }
             }

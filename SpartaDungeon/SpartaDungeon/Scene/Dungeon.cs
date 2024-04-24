@@ -9,70 +9,108 @@ namespace SpartaDungeon.Scene
         public static int clearCount = 0;
         public static void ShowDungeon()
         {
-            Console.WriteLine("던전입장");
-            Console.WriteLine("이곳에서 던전으로 들어가기전 활동을 할 수 있습니다.\n");
-            Console.WriteLine($"1. 쉬운 던전     |   방어력 {GameManager.dungeonLevels[0].RecommendedDefense} 이상 권장");
-            Console.WriteLine($"2. 일반 던전     |   방어력 {GameManager.dungeonLevels[1].RecommendedDefense} 이상 권장");
-            Console.WriteLine($"3. 어려운 던전   |   방어력 {GameManager.dungeonLevels[2].RecommendedDefense} 이상 권장");
-            Console.WriteLine("0. 나가기\n");
+            SetColorToText.SetColorToYellow("던전입장\n");
+
+            SetColorToText.SetColorToMagenta("1");
+            Console.Write(". 쉬운 던전     |   방어력 ");
+            SetColorToText.SetColorToMagenta($"{GameManager.dungeonLevels[0].RecommendedDefense}");
+            Console.Write(" 이상 권장\n");
+
+            SetColorToText.SetColorToMagenta("2");
+            Console.Write(". 일반 던전     |   방어력 ");
+            SetColorToText.SetColorToMagenta($"{GameManager.dungeonLevels[1].RecommendedDefense}");
+            Console.Write(" 이상 권장\n");
+
+            SetColorToText.SetColorToMagenta("3");
+            Console.Write(". 어려운 던전     |   방어력 ");
+            SetColorToText.SetColorToMagenta($"{GameManager.dungeonLevels[2].RecommendedDefense}");
+            Console.Write(" 이상 권장\n");
+
+            SetColorToText.SetColorToMagenta("0");
+            Console.Write(". 나가기\n\n");
 
             InputText.DungeonInput();
         }
 
         public static void ExploreDungeon(DungeonLevel dungeonLevel)
         {
-            int playerDefense = GameManager.user.Defense;
-            int playerHp = GameManager.user.HP;
-            int playerGold = GameManager.user.Gold;
+            float playerDefense = GameManager.user.Defense;
+            float playerHp = GameManager.user.HP;
+            float playerGold = GameManager.user.Gold;
 
             Random random = new Random();
             int losePercentage = random.Next(0, 10);
             //(권장 방어력 - 내 방어력) 만큼 랜덤 값에 설정
-            int lossHp = random.Next(20 + dungeonLevel.RecommendedDefense - playerDefense, 36 + dungeonLevel.RecommendedDefense - playerDefense);
-            int plusGold = random.Next(GameManager.user.AttackPower, GameManager.user.AttackPower*2 + 1);
+            int lossHp = random.Next(20 + (int)dungeonLevel.RecommendedDefense - (int)playerDefense, 36 + (int)dungeonLevel.RecommendedDefense - (int)playerDefense);
+            int plusGold = random.Next((int)GameManager.user.AttackPower, (int)GameManager.user.AttackPower*2 + 1);
 
             //권장 방어력보다 낮고 40% 확률에 걸리면 던전 실패 - 보상 없고 체력 감소 절반
             if (playerDefense < dungeonLevel.RecommendedDefense && losePercentage <= 3)
             {
-                GameManager.user.HP = playerHp / 2;
+                // 플레이어 hp가 1보다 작으면 감소할 체력이 없으므로 죽는다
+                if(playerHp < 1)
+                {
+                    SetColorToText.SetColorToRed("당신은 전투 과정에서 죽었습니다...\n");
+                    Console.Write($"체력 {playerHp} -> ");
+                    SetColorToText.SetColorToMagenta("0\n\n");
+                }
+                else
+                {
+                    GameManager.user.HP = playerHp / 2;
 
-                FailDungeon(playerHp); 
+                    FailDungeon(playerHp);
+                }
             }
             // 권장 방어력 보다 높다면 던전 클리어
             else
             {
                 // 기본 체력 감소량
                 GameManager.user.HP -= lossHp;
-                // 기본 클리어 보상 * 공격력으로 인한 추가 보상 확률
-                GameManager.user.Gold += (int)(dungeonLevel.Reward * (plusGold / 100.0));
+                if (GameManager.user.Die())
+                {
+                    SetColorToText.SetColorToRed("당신은 전투 과정에서 죽었습니다...\n");
+                    Console.Write($"체력 {playerHp} -> ");
+                    SetColorToText.SetColorToMagenta("0\n\n");
+                }
+                else
+                {
+                    // 기본 클리어 보상 * 공격력으로 인한 추가 보상 확률
+                    GameManager.user.Gold += (int)(dungeonLevel.Reward * (1+plusGold / 100.0));
 
-                ClearDungeon(playerHp, playerGold);
+                    ClearDungeon(playerHp, playerGold);
+                }
             }
         }
 
         // 던전 클리어시 호출
-        public static void ClearDungeon(int prevHp, int prevGold)
+        public static void ClearDungeon(float prevHp, float prevGold)
         {
             clearCount++;
             GameManager.user.LevelUp();
 
-            Console.WriteLine("던전 클리어");
+            SetColorToText.SetColorToSkyBlue("[던전 클리어]\n");
             Console.WriteLine("축하합니다!!\r\n던전을 클리어 하였습니다.\n");
-            Console.WriteLine("[탐험 결과]");
+            SetColorToText.SetColorToYellow("[탐험 결과]\n");
             Console.WriteLine($"체력 {prevHp} -> {GameManager.user.HP}");
             Console.WriteLine($"Gold {prevGold} -> {GameManager.user.Gold}\n");
-            Console.WriteLine("0. 나가기\n");
+            SetColorToText.SetColorToMagenta("0");
+            Console.Write(". 나가기\n\n");
 
             InputText.BackToDungeonInput();
         }
         // 던전 실패시 호출
-        public static void FailDungeon(int prevHp)
+        public static void FailDungeon(float prevHp)
         {
-            Console.WriteLine("던전 실패");
-            Console.WriteLine("던전 정복에 실패했습니다\r\n플레이어의 체력이 절반으로 감소합니다.\n");
-            Console.WriteLine("[탐험 결과]");
-            Console.WriteLine($"체력 {prevHp} -> {GameManager.user.HP}");
-            Console.WriteLine("0. 나가기\n");
+            SetColorToText.SetColorToRed("[던전 실패]\n");
+            Console.WriteLine("던전 정복에 실패했습니다;");
+            Console.WriteLine("플레이어의 체력이 절반으로 감소합니다.\n");
+
+            SetColorToText.SetColorToYellow("[탐험 결과]\n");
+            Console.Write($"체력 {prevHp} -> "); 
+            SetColorToText.SetColorToMagenta($"{GameManager.user.HP}\n\n");
+
+            SetColorToText.SetColorToMagenta("0");
+            Console.Write(". 나가기\n\n");
 
             InputText.BackToDungeonInput();
         }

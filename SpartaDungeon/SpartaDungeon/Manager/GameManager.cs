@@ -6,7 +6,7 @@ namespace SpartaDungeon.Manager
     internal class GameManager
     {
         // 초기 사용자 정보 초기화
-        public static User user = new User("정은지", 1, "전사", 10, 5, 100, 7000);
+        public static User user = new User("정은지", 1, "전사", 10, 5, 100, 2000);
 
         // 상점 아이템 배열 선언
         public static Item[] items = new Item[]
@@ -28,6 +28,9 @@ namespace SpartaDungeon.Manager
             new DungeonLevel(2, 11, 1700),
             new DungeonLevel(3, 17,2500),
         };
+
+        // 기존의 hp를 넘으면 안되므로 미리 저장
+        public static float maxHp = user.HP;
 
         static void Main(string[] args)
         {

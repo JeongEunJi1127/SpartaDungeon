@@ -14,13 +14,16 @@ namespace SpartaDungeon.Scene
 
         public static void ShowInventory()
         {
-            Console.WriteLine("인벤토리\n");
+            SetColorToText.SetColorToYellow("인벤토리\n");
+
             Console.WriteLine("[아이템 목록]\n");
 
             ShowInventoryItem(false);
 
-            Console.WriteLine("\n1. 장착 관리");
-            Console.WriteLine("0. 나가기\n");
+            SetColorToText.SetColorToMagenta("\n1");
+            Console.Write(". 장착 관리\n");
+            SetColorToText.SetColorToMagenta("0");
+            Console.Write(". 나가기\n\n");
 
             InputText.InventoryInput();
         }
@@ -28,7 +31,7 @@ namespace SpartaDungeon.Scene
         // 장착 관리
         public static void ManageEquipment()
         {
-            Console.WriteLine("인벤토리 - 장착관리\n");
+            SetColorToText.SetColorToYellow("인벤토리 - 장착관리");
             Console.WriteLine("[아이템 목록]\n");
 
             ShowInventoryItem(false);
@@ -58,20 +61,26 @@ namespace SpartaDungeon.Scene
                     itemProperty = $"체력 +{InventoryItems[i].HP}";
                 }
 
-                Console.Write($" -  {i + 1} ");
+                Console.Write(" - ");
+                SetColorToText.SetColorToMagenta($"{i + 1} ");
                 // 장착 중인 아이템 앞에는 [E] 표시
                 if (InventoryItems[i].IsEquipped)
                 {
                     Console.Write("[E] ");
                 }
-                Console.Write($"{InventoryItems[i].Name}  |   ");
+                Console.Write($"{InventoryItems[i].Name}  |  ");
                 // 아이템 속성 
-                Console.Write($"{itemProperty}  |   ");
+                string[] prop = itemProperty.Split(" ");
+                Console.Write($"{prop[0]} ");
+                SetColorToText.SetColorToMagenta($"{prop[1]}");
+                Console.Write(" |   ");
 
                 // store 스크립트에서 아이템 판매 시 보여주는 화면일 때 골드도 보여주기
                 if (showGold)
                 {
-                    Console.WriteLine($"{InventoryItems[i].Description}  |  {InventoryItems[i].Gold}G");
+                    Console.Write($"{InventoryItems[i].Description}  |  ");
+                    SetColorToText.SetColorToMagenta($"{InventoryItems[i].Gold} ");
+                    Console.Write("G\n");
                 }
                 else { Console.WriteLine(InventoryItems[i].Description); }
             }
