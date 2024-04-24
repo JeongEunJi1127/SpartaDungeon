@@ -1,4 +1,5 @@
-﻿using SpartaDungeon.UI;
+﻿using SpartaDungeon.Manager;
+using SpartaDungeon.UI;
 
 namespace SpartaDungeon.Scene
 {
@@ -76,7 +77,7 @@ namespace SpartaDungeon.Scene
         }
 
         // 장비가 장착되어있는지 아닌지 확인하는 메서드
-        public static void CheckTypeEquipment(Item item, int property, ref bool b, string str)
+        public static void CheckTypeEquipment(Item item, int property, ref bool isEquipped, string str)
         {
             // 속성값이 존재할 때
             if (property != 0)
@@ -85,7 +86,7 @@ namespace SpartaDungeon.Scene
                 if (!item.IsEquipped)
                 {
                     // 속성 장비가 이미 장착되어 있으면
-                    if (b)
+                    if (isEquipped)
                     {
                         Console.WriteLine($"\n{str} 장비는 이미 장착되어 있습니다.\n");
                         Console.WriteLine("다른 장비를 선택해주세요.\n");
@@ -95,8 +96,13 @@ namespace SpartaDungeon.Scene
                     else
                     {
                         Console.WriteLine($"\n{str} 장비를 장착합니다.\n");
+                        
+                        if (str == "공격력") { GameManager.user.AttackPower += property; }
+                        else if(str == "방어력") { GameManager.user.Defense += property; }
+                        else if (str == "체력") { GameManager.user.HP += property; }
+
                         item.IsEquipped = true;
-                        b = true;
+                        isEquipped = true;
                         ManageEquipment();
                     }
                 }
@@ -104,8 +110,13 @@ namespace SpartaDungeon.Scene
                 else
                 {
                     Console.WriteLine($"\n{str} 장비의 장착을 해제합니다.\n");
+
+                    if (str == "공격력") { GameManager.user.AttackPower -= property; }
+                    else if (str == "방어력") { GameManager.user.Defense -= property; }
+                    else if (str == "체력") { GameManager.user.HP -= property; }
+
                     item.IsEquipped = false;
-                    b = false;
+                    isEquipped = false;
                     ManageEquipment();
                 }
             }

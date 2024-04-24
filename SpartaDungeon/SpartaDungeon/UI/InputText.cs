@@ -27,6 +27,10 @@ namespace SpartaDungeon.UI
                         Console.Clear();
                         Store.ShowStore();
                         break;
+                    case 4:
+                        Console.Clear();
+                        Dungeon.ShowDungeon();
+                        break;
                     default:
                         Console.WriteLine("\n잘못된 입력입니다.\n");
                         break;
@@ -98,10 +102,11 @@ namespace SpartaDungeon.UI
                 // 현재 인벤토리에 있는 물품의 숫자를 고른다면
                 else if (input <= Inventory.GetInventory().Count)
                 {
+                    Item nowItem = Inventory.GetInventory()[input - 1];
                     Console.Clear();
-                    Inventory.CheckTypeEquipment(Inventory.GetInventory()[input - 1], Inventory.GetInventory()[input - 1].AttackPower, ref Inventory.attackEquip, "공격력");
-                    Inventory.CheckTypeEquipment(Inventory.GetInventory()[input - 1], Inventory.GetInventory()[input - 1].Defense, ref Inventory.defenseEquip, "방어력");
-                    Inventory.CheckTypeEquipment(Inventory.GetInventory()[input - 1], Inventory.GetInventory()[input - 1].HP, ref Inventory.hpEquip, "체력");
+                    Inventory.CheckTypeEquipment(nowItem, nowItem.AttackPower, ref Inventory.attackEquip, "공격력");
+                    Inventory.CheckTypeEquipment(nowItem, nowItem.Defense, ref Inventory.defenseEquip, "방어력");
+                    Inventory.CheckTypeEquipment(nowItem, nowItem.HP, ref Inventory.hpEquip, "체력");
                 }
                 else
                 {
@@ -199,6 +204,7 @@ namespace SpartaDungeon.UI
 
             while (true)
             {
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
                 int input = int.Parse(Console.ReadLine());
 
                 // 나가기
@@ -212,7 +218,7 @@ namespace SpartaDungeon.UI
                 else if (input <= items.Count)
                 {
                     Console.Clear();
-                    Console.Write($"{items[input - 1].Name} 을 {(int)(items[input - 1].Gold * 0.85)} G에 판매합니다.");
+                    Console.Write($"{items[input - 1].Name} 을 {(int)(items[input - 1].Gold * 0.85)} G에 판매합니다.\n");
                     GameManager.user.Gold += (int)(items[input - 1].Gold * 0.85);
 
                     // 판매 후 판매한 아이템 다시 구매할 수 있도록 상점 업데이트
@@ -225,8 +231,7 @@ namespace SpartaDungeon.UI
                     }
                     // 플레이어 인벤토리에서 아이템 판매
                     Inventory.RemoveInventoryItem(items[input - 1]);
-                    // 판매시 장착하고 있는 아이템이었다면 해제
-                    Status.UpdateStatus();
+
                     // 함수 다시 호출
                     Store.SellProduct();
                 }
@@ -236,5 +241,32 @@ namespace SpartaDungeon.UI
                 }
             }
         }
-    } 
+
+        // 던전 입장 입력
+        public static void DungeonInput()
+        {
+            while (true)
+            {
+                Console.WriteLine("원하시는 행동을 입력해주세요.\n");
+                int input = int.Parse(Console.ReadLine());
+
+                switch (input)
+                {
+                    case 0:
+                        Console.Clear();
+                        Village.ShowVillage();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break; 
+                    case 3:
+                        break;
+                    default:
+                        Console.WriteLine("\n잘못된 입력입니다.\n");
+                        break;
+                }
+            }
+        }
+    }
 }
