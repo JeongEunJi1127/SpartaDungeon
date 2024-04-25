@@ -6,7 +6,6 @@ namespace SpartaDungeon.Scene
 {
     public class Dungeon
     {
-        public static int clearCount = 0;
         public static void ShowDungeon()
         {
             SetColorToText.SetColorToYellow("던전입장\n");
@@ -83,12 +82,13 @@ namespace SpartaDungeon.Scene
                     ClearDungeon(playerHp, playerGold);
                 }
             }
+            FileManager.SaveData();
         }
 
         // 던전 클리어시 호출
         public static void ClearDungeon(float prevHp, float prevGold)
         {
-            clearCount++;
+            GameManager.user.ClearCount++;
             GameManager.user.LevelUp();
 
             SetColorToText.SetColorToSkyBlue("[던전 클리어]\n");

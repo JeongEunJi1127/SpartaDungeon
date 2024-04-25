@@ -39,15 +39,27 @@ namespace SpartaDungeon.Manager
             {
                 string userLData = File.ReadAllText(path + "\\UserData.json");
                 User userLoadData = JsonConvert.DeserializeObject<User>(userLData);
-
+                GameManager.user = userLoadData;
+                
                 string inventoryLData = File.ReadAllText(path + "\\UserInventoryData.json");
                 List<Item> inventoryLoadData = JsonConvert.DeserializeObject<List<Item>>(inventoryLData);
+                foreach (Item data in inventoryLoadData)
+                {
+                    Inventory.InventoryItems.Add(data);
+                }
 
                 string storeLData = File.ReadAllText(path + "\\StoreItemData.json");
                 Item[] storeLoadData = JsonConvert.DeserializeObject<Item[]>(storeLData);
-
-                Console.WriteLine(userLoadData);
+                foreach(Item data in storeLoadData)
+                {
+                    GameManager.items.Add(data);
+                }
             }
+        }
+
+        public static void UpdateData()
+        {
+
         }
     }
 }

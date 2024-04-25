@@ -207,7 +207,7 @@ namespace SpartaDungeon.UI
                         break;
                     }
                     // 현재 상점에 있는 물품의 숫자를 고른다면
-                    else if (input <= GameManager.items.Length)
+                    else if (input <= GameManager.items.Count)
                     {
                         // 이미 구매한 아이템이라면
                         if (GameManager.items[input - 1].IsPurchased)
@@ -241,7 +241,7 @@ namespace SpartaDungeon.UI
                     }
                     else
                     {
-                        SetColorToText.SetColorToRed($"\n 잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~{GameManager.items.Length} 입니다 \n ");
+                        SetColorToText.SetColorToRed($"\n 잘못된 입력입니다. 구매할 수 있는 상품의 번호는 1~{GameManager.items.Count} 입니다 \n ");
                     }
                 }
                 else
