@@ -71,6 +71,9 @@ namespace SpartaDungeon.Scene
                     SetColorToText.SetColorToRed("당신은 전투 과정에서 죽었습니다...\n");
                     Console.Write($"체력 {playerHp} -> ");
                     SetColorToText.SetColorToMagenta("0\n\n");
+
+                    SetColorToText.SetColorToMagenta("0");
+                    Console.Write(". 나가기\n\n");
                 }
                 else
                 {
@@ -102,7 +105,7 @@ namespace SpartaDungeon.Scene
         public static void FailDungeon(float prevHp)
         {
             SetColorToText.SetColorToRed("[던전 실패]\n");
-            Console.WriteLine("던전 정복에 실패했습니다;");
+            Console.WriteLine("던전 정복에 실패했습니다.");
             Console.WriteLine("플레이어의 체력이 절반으로 감소합니다.\n");
 
             SetColorToText.SetColorToYellow("[탐험 결과]\n");

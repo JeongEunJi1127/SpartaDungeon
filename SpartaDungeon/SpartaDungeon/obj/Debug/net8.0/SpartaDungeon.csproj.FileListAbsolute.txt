@@ -27,3 +27,6 @@ C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Spar
 C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\SpartaDungeon.pdb
 C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\SpartaDungeon.genruntimeconfig.cache
 C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\ref\SpartaDungeon.dll
+C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\SpartaDungeon.csproj.AssemblyReference.cache
+C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\UnityProjects\SpartaDungeon\SpartaDungeon\SpartaDungeon\obj\Debug\net8.0\SpartaDu.CCB74D96.Up2Date

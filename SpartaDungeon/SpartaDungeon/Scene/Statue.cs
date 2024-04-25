@@ -25,10 +25,13 @@ namespace SpartaDungeon.Scene
             SetColorToText.SetColorToMagenta(GameManager.user.Job.ToString());
             Console.Write("\n공격력 ");
             SetColorToText.SetColorToMagenta(GameManager.user.AttackPower.ToString());
+            Console.Write(attackPower);
             Console.Write("\n방어력 ");
             SetColorToText.SetColorToMagenta(GameManager.user.Defense.ToString());
+            Console.Write(defense);
             Console.Write("\n체 력 ");
             SetColorToText.SetColorToMagenta(GameManager.user.HP.ToString());
+            Console.Write(hp);
             Console.Write("\nGold ");
             SetColorToText.SetColorToMagenta(GameManager.user.Gold.ToString());
             Console.Write(" G");

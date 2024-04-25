@@ -13,7 +13,7 @@ namespace SpartaDungeon.Scene
         public static void ShowRestPlace()
         {
             SetColorToText.SetColorToYellow("휴식하기\n");
-            Console.WriteLine($"500 G 를 내면 체력을 회복할 수 있습니다.");
+            Console.WriteLine($"500 G 를 내면 체력 20을 회복할 수 있습니다.");
             Console.WriteLine($"\n[보유 골드]\n");
             SetColorToText.SetColorToMagenta($"{GameManager.user.Gold} ");
             Console.Write("G\n\n");

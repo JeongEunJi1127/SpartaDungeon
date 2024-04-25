@@ -65,7 +65,7 @@ namespace SpartaDungeon.Scene
             // items에 있는 아이템 목록 
             for (int i = 0; i < GameManager.items.Length; i++)
             {
-                // 아이템의 속성 값이 0 이 아닌 것 모두 뽑기
+                // 아이템의 속성 값이 0이 아닌 것 모두 뽑기
                 List<string> itemProperty = new List<string>();
                 if (GameManager.items[i].AttackPower != 0) { itemProperty.Add($"공격력 + {GameManager.items[i].AttackPower} "); }
                 if (GameManager.items[i].Defense != 0) { itemProperty.Add($"방어력 + {GameManager.items[i].Defense} "); }
