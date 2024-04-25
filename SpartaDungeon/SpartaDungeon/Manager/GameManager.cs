@@ -7,7 +7,12 @@ namespace SpartaDungeon.Manager
     {
         public static User user;
         public static List<Item> items;
-        public static List<DungeonLevel> dungeonLevels;
+        public static List<DungeonLevel> dungeonLevels= new List<DungeonLevel>
+            {
+                new DungeonLevel(1, 5, 1000 ),
+                new DungeonLevel(2, 11, 1700),
+                new DungeonLevel(3, 17,2500),
+            };
 
         // 기존의 hp를 넘으면 안되므로 미리 저장
         public static float maxHp;
@@ -28,12 +33,7 @@ namespace SpartaDungeon.Manager
                 new Item("철 허리 보호대", "허리를 튼튼하게 보호해줄 것 같습니다.             ", 0, 0, 9, 4000,false,false)
            };
 
-            dungeonLevels = new List<DungeonLevel>
-            {
-                new DungeonLevel(1, 5, 1000 ),
-                new DungeonLevel(2, 11, 1700),
-                new DungeonLevel(3, 17,2500),
-            };
+            
             maxHp = user.HP;
         }
 
