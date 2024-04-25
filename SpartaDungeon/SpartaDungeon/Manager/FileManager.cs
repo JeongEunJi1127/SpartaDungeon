@@ -43,6 +43,10 @@ namespace SpartaDungeon.Manager
                 
                 string inventoryLData = File.ReadAllText(path + "\\UserInventoryData.json");
                 List<Item> inventoryLoadData = JsonConvert.DeserializeObject<List<Item>>(inventoryLData);
+                if (Inventory.InventoryItems == null)
+                {
+                    Inventory.InventoryItems = new List<Item>(); // 리스트를 초기화
+                }
                 foreach (Item data in inventoryLoadData)
                 {
                     Inventory.InventoryItems.Add(data);
@@ -50,16 +54,15 @@ namespace SpartaDungeon.Manager
 
                 string storeLData = File.ReadAllText(path + "\\StoreItemData.json");
                 Item[] storeLoadData = JsonConvert.DeserializeObject<Item[]>(storeLData);
-                foreach(Item data in storeLoadData)
+                if (GameManager.items == null)
+                {
+                    GameManager.items = new List<Item>(); // 리스트를 초기화
+                }
+                foreach (Item data in storeLoadData)
                 {
                     GameManager.items.Add(data);
                 }
             }
-        }
-
-        public static void UpdateData()
-        {
-
         }
     }
 }

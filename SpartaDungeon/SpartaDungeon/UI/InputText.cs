@@ -9,6 +9,7 @@ namespace SpartaDungeon.UI
         // 마을 입력
         public static void VillageInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -54,6 +55,7 @@ namespace SpartaDungeon.UI
         // 상태창 입력 - 다시 마을로 돌아가기
         public static void StatusInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -83,6 +85,7 @@ namespace SpartaDungeon.UI
         // 인벤토리 입력
         public static void InventoryInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -116,6 +119,7 @@ namespace SpartaDungeon.UI
         // 인벤토리 - 장착 관리 입력
         public static void ManageEquipmentInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("\n장착하고 싶거나 장착 해제하고 싶은 장비의 번호를 입력해주세요.\n");
@@ -155,6 +159,7 @@ namespace SpartaDungeon.UI
         // 상점 입력
         public static void StoreInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -191,6 +196,7 @@ namespace SpartaDungeon.UI
         // 상점 - 아이템 구매 입력
         public static void BuyProductInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -253,6 +259,7 @@ namespace SpartaDungeon.UI
         // 상점 - 아이템 판매 입력
         public static void sellProductInput()
         {
+            FileManager.SaveData();
             // 플레이어가 현재 가지고 있는 아이템 배열 가져오기
             List<Item> items = Inventory.GetInventory();
 
@@ -307,6 +314,7 @@ namespace SpartaDungeon.UI
         // 던전 입장 입력
         public static void DungeonInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -348,6 +356,7 @@ namespace SpartaDungeon.UI
         // 던전 - 클리어& 실패시 던전입장 화면으로 돌아가는 입력 
         public static void BackToDungeonInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");
@@ -377,6 +386,7 @@ namespace SpartaDungeon.UI
         // 휴식 입력
         public static void RestInput()
         {
+            FileManager.SaveData();
             while (true)
             {
                 SetColorToText.SetColorToDarkCyan("원하시는 행동을 입력해주세요.\n");

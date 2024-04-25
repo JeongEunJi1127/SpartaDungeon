@@ -39,7 +39,6 @@ namespace SpartaDungeon.Manager
 
         static void Main(string[] args)
         {
-            //Init();
             FileManager.LoadData();
             Village.ShowVillage();
         }

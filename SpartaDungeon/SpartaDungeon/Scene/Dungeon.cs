@@ -82,7 +82,6 @@ namespace SpartaDungeon.Scene
                     ClearDungeon(playerHp, playerGold);
                 }
             }
-            FileManager.SaveData();
         }
 
         // 던전 클리어시 호출
