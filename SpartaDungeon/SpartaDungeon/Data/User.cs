@@ -31,12 +31,12 @@ public class User
         {
             Dungeon.clearCount = 0;
             Level++;
+            AttackPower += 0.5f;
+            Defense++;
+
             SetColorToText.SetColorToSkyBlue($"[레벨업!]");
             Console.Write("현재 플레이어 레벨 : ");
             SetColorToText.SetColorToMagenta($"{Level}\n\n");
-
-            AttackPower += 0.5f;
-            Defense ++;
         }
     }
 
