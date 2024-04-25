@@ -6,7 +6,7 @@ namespace SpartaDungeon.Scene
     public class Inventory
     {
         // 사용자의 아이템 리스트 선언
-        private static List<Item> InventoryItems = new List<Item>();
+        public static List<Item> InventoryItems = new List<Item>();
 
         public static bool attackEquip = false;
         public static bool defenseEquip = false;

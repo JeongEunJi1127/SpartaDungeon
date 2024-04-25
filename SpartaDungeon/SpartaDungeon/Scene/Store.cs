@@ -63,7 +63,7 @@ namespace SpartaDungeon.Scene
         public static void ShowStoreProduct(bool showNum)
         {
             // items에 있는 아이템 목록 
-            for (int i = 0; i < GameManager.items.Length; i++)
+            for (int i = 0; i < GameManager.items.Count; i++)
             {
                 // 아이템의 속성 값이 0이 아닌 것 모두 뽑기
                 List<string> itemProperty = new List<string>();

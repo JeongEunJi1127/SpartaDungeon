@@ -6,17 +6,17 @@ namespace SpartaDungeon.Manager
     internal class GameManager
     {
         public static User user;
-        public static Item[] items;
-        public static DungeonLevel[] dungeonLevels;
+        public static List<Item> items;
+        public static List<DungeonLevel> dungeonLevels;
 
         // 기존의 hp를 넘으면 안되므로 미리 저장
         public static float maxHp;
 
         public static void Init()
         {
-            user = new User("정은지", 1, "전사", 10, 5, 100, 2000);
+            user = new User("정은지", 1, "전사", 10, 5, 100, 2000,0);
 
-            items = new Item[]
+            items = new List<Item>
            {
                 new Item("수련자 갑옷", "수련에 도움을 주는 갑옷입니다.                  ", 0, 5, 0, 1000,false,false),
                 new Item("무쇠갑옷", "무쇠로 만들어져 튼튼한 갑옷입니다.              ", 0, 9, 0, 2000,false,false),
@@ -28,7 +28,7 @@ namespace SpartaDungeon.Manager
                 new Item("철 허리 보호대", "허리를 튼튼하게 보호해줄 것 같습니다.             ", 0, 0, 9, 4000,false,false)
            };
 
-            dungeonLevels = new DungeonLevel[]
+            dungeonLevels = new List<DungeonLevel>
             {
                 new DungeonLevel(1, 5, 1000 ),
                 new DungeonLevel(2, 11, 1700),
@@ -39,7 +39,8 @@ namespace SpartaDungeon.Manager
 
         static void Main(string[] args)
         {
-            Init();
+            //Init();
+            FileManager.LoadData();
             Village.ShowVillage();
         }
     }
