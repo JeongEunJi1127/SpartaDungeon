@@ -13,7 +13,9 @@ namespace SpartaDungeon.Manager
 {
     internal class FileManager
     {
-        public static string path = "C:\\UnityProjects\\SpartaDungeon\\SpartaDungeon\\SpartaDungeon\\Json";
+        //public static string path = 사용자의 SpartaDungeun > SpartaDungeun > SpartaDungeun > bin > Debug  > net 8.0 위치에 생성됨
+
+        public static string path = AppDomain.CurrentDomain.BaseDirectory;
         public static void SaveData()
         { 
             string userData = JsonConvert.SerializeObject(GameManager.user);
@@ -63,6 +65,15 @@ namespace SpartaDungeon.Manager
                     GameManager.items.Add(data);
                 }
             }
+        }
+
+        // Game Over 시 데이터 리셋 & LoadData()
+        public static void ResetData()
+        {
+            File.Delete(path + "\\UserData.json");
+            File.Delete(path + "\\UserInventoryData.json");
+            File.Delete(path + "\\StoreItemData.json");
+            LoadData();
         }
     }
 }

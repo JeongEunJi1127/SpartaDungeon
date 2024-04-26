@@ -72,7 +72,18 @@ namespace SpartaDungeon.Scene
                     SetColorToText.SetColorToMagenta("0\n\n");
 
                     SetColorToText.SetColorToMagenta("0");
-                    Console.Write(". 나가기\n\n");
+                    Console.Write(". 게임 다시 시작하기\n\n");
+
+                    SetColorToText.SetColorToSkyBlue("리셋중 ..\n");
+                    FileManager.ResetData();
+                    Thread.Sleep(600);
+                    SetColorToText.SetColorToSkyBlue("3\n");
+                    Thread.Sleep(600);
+                    SetColorToText.SetColorToSkyBlue("2\n");
+                    Thread.Sleep(600);
+                    SetColorToText.SetColorToSkyBlue("1\n");
+                    Thread.Sleep(600);
+                    SetColorToText.SetColorToSkyBlue("리셋 완료!\n");
                 }
                 else
                 {
